@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Badges</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🏆 Badge Gallery</h1>
+  <form method="post">
+    <input type="text" name="username" placeholder="Your Name" required><br>
+    <input type="text" name="badge" placeholder="Badge Earned" required><br>
+    <input type="submit" value="Add Badge">
+  </form>
+  <hr>
+  <h3>🎯 Badge Progress:</h3>
+  {% for user, count in counts.items() %}
+    <p>{{ user }}: {{ count }} badge(s)</p>
+  {% endfor %}
+  <hr>
+  <h3>🎯 Your Badge Progress</h3>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+  <h3>All Badges:</h3>
+  {% for b in badges %}
+    <p>🎖️ {{ b[0] }} earned <strong>{{ b[1] }}</strong></p>
+  {% endfor %}
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

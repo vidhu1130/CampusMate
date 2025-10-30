@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🎓 Welcome to CampusMate</h1>
+  <form action="/login" method="post">
+    <input name="username" placeholder="Username" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+  </form>
+
+  <form action="/signup" method="post">
+    <input name="username" placeholder="New Username" required>
+    <input name="password" type="password" placeholder="New Password" required>
+    <input type="submit" value="Sign Up">
+  </form>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

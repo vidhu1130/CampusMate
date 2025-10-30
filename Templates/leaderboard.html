@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Leaderboards</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🏆 CampusMate Leaderboards</h1>
+
+  <h3>🎖️ Top Badge Earners</h3>
+  {% for user, count in badges %}
+    <p>{{ user }}: {{ count }}</p>
+  {% endfor %}
+
+  <h3>📚 Top Note Sharers</h3>
+  {% for user, count in notes %}
+    <p>{{ user }}: {{ count }}</p>
+  {% endfor %}
+
+  <h3>🧠 Top Skill Helpers</h3>
+  {% for user, count in skills %}
+    <p>{{ user }}: {{ count }}</p>
+  {% endfor %}
+
+  <h3>📅 Event Posters</h3>
+  {% for user, count in events %}
+    <p>{{ user }}: {{ count }}</p>
+  {% endfor %}
+
+  <h3>🔍 Lost & Found Contributors</h3>
+  {% for user, count in lostfound %}
+    <p>{{ user }}: {{ count }}</p>
+  {% endfor %}
+
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

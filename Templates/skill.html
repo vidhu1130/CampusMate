@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Skill Exchange</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🧠 Skill Exchange</h1>
+  <form method="post">
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="text" name="skill" placeholder="Skill You Offer" required><br>
+    <input type="submit" value="Post Skill">
+  </form>
+  <hr>
+  <h3>Available Skills:</h3>
+  {% for s in skills %}
+    <p>{{ s[0] }} offers help with <strong>{{ s[1] }}</strong></p>
+  {% endfor %}
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

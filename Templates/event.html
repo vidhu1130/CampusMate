@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Events</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📅 CampusMate Event Board</h1>
+  <form method="post">
+    <input type="text" name="title" placeholder="Event Title" required><br>
+    <input type="date" name="date" required><br>
+    <textarea name="desc" placeholder="Event Description" required></textarea><br>
+    <input type="submit" value="Post Event">
+  </form>
+  <hr>
+  <h3>Upcoming Events:</h3>
+  {% for e in events %}
+    <p><strong>{{ e[0] }}</strong> on {{ e[1] }}<br>{{ e[2] }}</p><hr>
+  {% endfor %}
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🎓 CampusMate Dashboard</h1>
+  <p>Welcome, <strong>{{ username }}</strong>!</p>
+
+  <div class="dashboard-links">
+    <a href="/chat">💬 Chat Board</a>
+    <a href="/event">📅 Event Board</a>
+    <a href="/badge">🏆 Badge Gallery</a>
+    <a href="/notes">📚 Notes Sharing</a>
+    <a href="/skill">🧠 Skill Exchange</a>
+    <a href="/lostfound">🔍 Lost & Found</a>
+    <a href="/analytics">📈 Analytics</a>
+    <a href="/profile?username={{ username }}">👤 Your Profile</a>
+    <a href="/leaderboard">🏆 Leaderboard</a>
+    <a href="/logout">🚪 Logout</a>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>👤 Profile: {{ username }}</h1>
+
+  <h3>🏆 Badges Earned</h3>
+  <ul>
+    {% for badge in badges %}
+      <li>{{ badge }}</li>
+    {% endfor %}
+  </ul>
+  <h3>🎯 Badge Progress</h3>
+  <div id="profile-progress-container">
+    <div id="profile-progress-bar"></div>
+  </div>
+
+  <h3>📚 Notes Shared</h3>
+  <ul>
+    {% for note in notes %}
+      <li><a href="{{ note[1] }}" target="_blank">{{ note[0] }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>🧠 Skills Offered</h3>
+  <ul>
+    {% for skill in skills %}
+      <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>📅 Events Posted</h3>
+  <ul>
+    {% for event in events %}
+      <li>{{ event[0] }} on {{ event[1] }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>🔍 Lost & Found Posts</h3>
+  <ul>
+    {% for item in lostfound %}
+      <li>{{ item[0] }} ({{ item[1] }}) – Contact: {{ item[2] }}
+        {% if item[3] %}
+          <br><img src="{{ item[3] }}" width="100">
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

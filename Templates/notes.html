@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Notes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📚 Notes & Study Help</h1>
+  <form method="post">
+    <input type="text" name="subject" placeholder="Subject" required><br>
+    <input type="text" name="link" placeholder="Link to Notes or Image" required><br>
+    <input type="submit" value="Share Notes">
+  </form>
+  <form method="post">
+    <input type="text" name="search" placeholder="Search subject">
+    <input type="submit" value="Search">
+  </form>
+  <hr>
+  <h3>Available Notes:</h3>
+  {% for n in notes %}
+    <p><strong>{{ n[0] }}</strong>: <a href="{{ n[1] }}" target="_blank">View</a></p>
+  {% endfor %}
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

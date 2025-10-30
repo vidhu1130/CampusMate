@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f8ff;
+  text-align: center;
+  padding: 40px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#progress-container {
+  width: 80%;
+  max-width: 400px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  background-color: #28a745;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+#profile-progress-container {
+  width: 80%;
+  max-width: 400px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#profile-progress-bar {
+  height: 100%;
+  background-color: #17a2b8;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}

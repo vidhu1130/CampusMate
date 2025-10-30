@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CampusMate Lost & Found</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🔍 Lost & Found</h1>
+  <form method="post">
+    <input type="text" name="item" placeholder="Item" required><br>
+    <select name="status">
+      <option value="Lost">Lost</option>
+      <option value="Found">Found</option>
+    </select><br>
+    <input type="text" name="contact" placeholder="Contact Info" required><br>
+    <input type="text" name="image" placeholder="Image Link (optional)"><br>
+    <input type="submit" value="Post">
+  </form>
+  <form method="post">
+    <input type="text" name="search" placeholder="Search item">
+    <input type="submit" value="Search">
+  </form>
+  <hr>
+  <h3>Posts:</h3>
+  {% for l in items %}
+    <p><strong>{{ l[0] }}</strong> ({{ l[1] }}) – Contact: {{ l[2] }}<br>
+    {% if l[3] %}
+      <img src="{{ l[3] }}" width="100">
+    {% endif %}
+    </p><hr>
+  {% endfor %}
+  <a href="/dashboard">← Back to Dashboard</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
